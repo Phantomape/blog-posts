@@ -5,6 +5,21 @@ tags:
 - React
 categories: Frontend
 ---
+Let's start with some key concepts like what twig is, how twig work and etc., and then we can move on to the section of how to use react component in twig file.
+##	Twig
+So twig, first and foremost, is a template engine for PHP(I don't really like it but it is official language in the company), which takes data(handled by backend logic) and template(frontend files like .html) as input and compiles them into the pages. There are four steps in total:
+```
+Load the template and
+	if the template is already compiled
+		load it
+	else
+		the lexer tokenize the code into smaller pieces
+		the parser converts the token stream into a tree of nodes(AST)
+		the compiler transform the AST into php code
+Called display method
+```
+a more detailed of the whole process can be found [here](https://twig.symfony.com/doc/2.x/internals.html).
+
 To build a twittmap, we need to utilize the twitter API. Here, I chose twitter4j, which is an unofficial Java library for the Twitter API. With Twitter4J, you can easily integrate your Java application with the Twitter service. There are some tutorials here: [How to "Sign in with Twitter" using twitter4j](https://xmeng.wordpress.com/2011/07/10/how-to-handle-sign-in-with-twitter-using-twitter4j/ "How to sign in with twitter using twitter4j").
 ##	Register twitter app
 Click this [link](https://dev.twitter.com/apps)and fill out the following form, it should be fine. Just remember to grant your app access for read and write.
