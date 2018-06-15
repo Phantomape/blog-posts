@@ -24,3 +24,28 @@ table. Having to make two memory references per memory reference reduces perform
 The solution to the problem is to equip computers with a small hardware for mapping addresses without going through the page table, which is based on the assumption that most programs tend to make a large number of references to a small number of pages. This device is called Translation Lookaside Buffer(TLB) or associative memory. 
 
 Normally, TLB is inside MMU and it can check for address tuples in parallel
+
+### Page Replacement Algorithm
+*   NRU(Not Recently Used):
+    *   Easy to understand
+    *   Moderately efficient to implement
+    *   Adequate performance
+*   FIFO(First-In, First-Out):
+    *   Rarely used
+*   Second-Chance:
+    *   Degenerate into FIFO when all pages have been referenced
+*   Clock
+    *   Similar to Second-Chance, only in this case the list is circular
+*   LRU(Least Recently Used):
+    *   Very expensive
+    *   An ordered linked list of all pages in memory
+*   NFU(Not Frequently Used):
+    *   One page heavily used may outweigh other useful pages
+*   Aging
+    *   Figure out which page is referenced last if they both are used with the same frequency
+*   The Working Set:
+    *   Keep track of each process's working set of pages and make sure it is in memory before running
+    *   Most programs randomly access a small number of pages, but the working set of pages changes slowly in time
+    *   Never used slide window of memory references due to performance issues, use slide window of time
+    *   Expensive
+*   WSClock
