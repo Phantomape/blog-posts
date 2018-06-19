@@ -49,3 +49,5 @@ Normally, TLB is inside MMU and it can check for address tuples in parallel
     *   Never used slide window of memory references due to performance issues, use slide window of time
     *   Expensive
 *   WSClock
+    *   Widely used in practice
+    *   Efficient
