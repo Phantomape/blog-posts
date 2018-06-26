@@ -23,3 +23,10 @@ Let's assume A has a file to share with B. If directories of B contains disk add
 There are two solutions to this problem: one is callled i-node(UNIX) or symbolic link.
 
 #   Log Structure File Systems
+*   Structure the whole disk as a log
+*   Since i-nodes' address can not simply be calculated, an i-node map is maintained.
+*   All writes are initially buffered in
+memory, and periodically all the buffered writes are written to the disk in a single segment, at the end of the log.
+*   A cleaner thread that spends its time scanning the log circularly to compact it.
+*   Like a circular buffer
+*   Measurements given in the papers cited above show that LFS outperforms UNIX by an order of magnitude on small writes, while having a performance that is as good as or better than UNIX for reads and large writes.
