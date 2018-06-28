@@ -14,3 +14,10 @@ categories: Operating System
 2.  Hold-and-wait condition. Processes currently holding resources that were granted earlier can request new resources.
 3.  No-preemption condition. Resources previously granted cannot be forcibly taken away from a process. They must be explicitly released by the process holding them
 4.  Circular wait condition. There must be a circular list of two or more processes, each of which is waiting for a resource held by the next member of the chain.
+
+#   Recovery from Deadlock
+*   Recovery through preemption: take a resource away from its current owner and give it to another process
+
+*   Recovery through rollback: have processes checkpointed periodically
+
+*   Recovery throuth killing processes: kill the current process
