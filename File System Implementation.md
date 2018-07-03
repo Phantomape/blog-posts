@@ -30,3 +30,9 @@ memory, and periodically all the buffered writes are written to the disk in a si
 *   A cleaner thread that spends its time scanning the log circularly to compact it.
 *   Like a circular buffer
 *   Measurements given in the papers cited above show that LFS outperforms UNIX by an order of magnitude on small writes, while having a performance that is as good as or better than UNIX for reads and large writes.
+
+#   Journaling File Systems
+The basic idea here is to keep a log of what the file system is going to do before it does it, so that if the system crashes before it can do its planned work, upon rebooting the system can look in the log to see what was going on at the time of the crash and finish the job.
+
+#   Virtual File System
+The virtual file system(VFS) has an upper interface to user processes and it is the well-known POSIX interface. Then comes the VFS interface
