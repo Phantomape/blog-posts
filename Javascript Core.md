@@ -43,4 +43,31 @@ For the following code, the ```x``` is a free variable and the program would res
 To implement lexical scoping, we need to capture the environment where the function is created, so think of it as every function has a reference to the environment.
 
 #   Closure
-If you took a loot at the last section, you can understand 
+If you took a loot at the last section, you can understand closure better
+*   Closure: A closure is a function which captures the environment where it’s defined. Further this environment is used for identifier resolution.
+
+#   This
+Unlike other variables that are static scoped, ```this``` value is dynamically scoped and it can not mutate. The purpose of it is to executed the same code for multiple objects(think about clss-based OOP). For example, we are unable to determine ```this``` value by looking at the following code:
+```
+function foo() {
+  return this;
+}
+```
+But there is an exception, the arrow functions are special in terms of this value: their this is lexical (static). Holy shit, I can't understand the example code from the article
+
+#   Realm
+I have never heard of realm before, based on this article, before code is evalutated, all code must be associated with a realm, which provides a global environment for a context.
+
+*   Realm: A code realm is an object which encapsulates a separate global environment.
+
+#   Job
+*   Job: A job is an abstract operation that initiates an ECMAScript computation when no other ECMAScript computation is currently in progress.
+
+Jobs are enqueued on the job queues, and in current spec version there are two job queues: ScriptJobs, and PromiseJobs. 
+
+And initial job on the ScriptJobs queue is the main entry point to our program — initial script which is loaded and evaluated: a realm is created, a global context is created and is associated with this realm, it’s pushed onto the stack, and the global code is executed.
+
+#   Agent
+*   Agent: An agent is an abstraction encapsulating execution context stack, set of job queues, and code realms.
+
+The agents are state isolated from each other, and can communicate by sending messages. Some data can be shared though between agents, for example SharedArrayBuffers. Agents can also combine into agent clusters.
