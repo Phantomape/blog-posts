@@ -5,3 +5,18 @@ tags:
 - OOP
 categories: Programming Language
 ---
+This article is full of shit that I don't understand:(
+#   Static Class Based Model
+The class represents a formal abstract set of the generalized characteristics of an instance (the knowledge about objects). Characteristics of instances are: properties (object description) and methods (object activity).
+
+#   Prototype Based Model
+objects can independently store all their characteristics (properties, methods) and do not need the class.
+
+##  Delegation
+In contrast with the static class based implementation, in case of impossibility to respond the message, the conclusion is: the object at the moment does not have the requested characteristic, however to get the result is still possible if to try to analyze alternative prototype chain, or probably, the object will have such characteristic after a number of mutations.
+
+##  Concatenative Model
+Concatenative prototyping is to not use delegation but exact copy of a prototype at the moment of object creation
+
+#   Duck Typing
+identification of objects can be made not by their hierarchy and belonging to concrete type, but by a current set of characteristics.
