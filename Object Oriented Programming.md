@@ -20,3 +20,9 @@ Concatenative prototyping is to not use delegation but exact copy of a prototype
 
 #   Duck Typing
 identification of objects can be made not by their hierarchy and belonging to concrete type, but by a current set of characteristics.
+
+#   Encapsulation
+The basic purpose of the encapsulation, repeat, is an abstraction from the user of the auxiliary helper data and not a “way to secure object from hackers”. Encapsulating auxiliary helper (local) objects, we provide possibility for further behavior changes of the public-interface with a minimum of expenses, localizing and predicting places of these changes. And exactly this is the main encapsulation purpose.
+
+#   Mixins
+Mixins have been suggested as an alternative to multiple inheritance. These are independent elements which can be mixed with any objects, extending their functionality.
