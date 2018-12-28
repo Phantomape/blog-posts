@@ -16,3 +16,12 @@
 
 ```Future Project```:
 *   Use docker to deploy spring config server
+
+#   2018-12-28
+
+```WIP```:
+*   Fig
+*   Fluentd
+
+```Future Project```:
+*   Use zipkins in distributed system
